@@ -1,12 +1,9 @@
 src/node_modules/
 src/bower_components/
 
-data/config.php
+data/
+uploads/
 
-uploads/big/*
-uploads/import/*
-uploads/medium/*
-uploads/thumb/*
 plugins/*
 
 !uploads/big/index.html
