@@ -226,6 +226,7 @@ contextMenu.photoMore = function(photoID, e) {
 	let showDownload = lychee.publicMode===false || ((album.json && album.json.downloadable && album.json.downloadable==='1') && lychee.publicMode===true)
 
 	let items = [
+		// remove 'Full Photo' option from public photos without download
 		//{ title: build.iconic('fullscreen-enter') + 'Full Photo', fn: () => window.open(photo.getDirectLink()) },
 		{ title: build.iconic('cloud-download') + 'Download', visible: showDownload, fn: () => photo.getArchive(photoID) }
 	]
