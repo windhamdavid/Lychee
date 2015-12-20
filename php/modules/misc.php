@@ -97,7 +97,7 @@ function getGraphHeader($database, $photoID) {
 
 	$return = '<!-- General Meta Data -->';
 	$return .= '<meta name="title" content="' . $row->title . '">';
-	$return .= '<meta name="description" content="' . $row->description . ' - via Lychee">';
+	$return .= '<meta name="description" content="' . $row->description . '">';
 	$return .= '<link rel="image_src" type="image/jpeg" href="' . $picture . '">';
 
 	$return .= '<!-- Twitter Meta Data -->';
@@ -107,7 +107,7 @@ function getGraphHeader($database, $photoID) {
 
 	$return .= '<!-- Facebook Meta Data -->';
 	$return .= '<meta property="og:title" content="' . $row->title . '">';
-	$return .= '<meta property="og:description" content="' . $row->description . ' - via Lychee">';
+	$return .= '<meta property="og:description" content="' . $row->description . '">';
 	$return .= '<meta property="og:image" content="' . $picture . '">';
 	$return .= '<meta property="og:url" content="' . $url . '">';
 
