@@ -3,9 +3,9 @@
 	<head>
 
 		<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-		<title>Lychee</title>
+		<title>Photo | David A. Windham</title>
 
-		<meta name="author" content="Tobias Reich">
+		<meta name="author" content="David A. Windham">
 
 		<!-- CSS -->
 		<link type="text/css" rel="stylesheet" href="dist/main.css">
