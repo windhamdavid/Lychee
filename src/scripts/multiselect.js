@@ -1,6 +1,5 @@
 /**
  * @description Select multiple albums or photos.
- * @copyright   2015 by Tobias Reich
  */
 
 multiselect = {}
@@ -159,7 +158,7 @@ multiselect.resize = function(e) {
 
 multiselect.stopResize = function() {
 
-	$(document).off('mousemove mouseup')
+	if (multiselect.position.top!==null) $(document).off('mousemove mouseup')
 
 }
 

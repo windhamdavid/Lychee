@@ -1,6 +1,5 @@
 /**
  * @description This module takes care of the header.
- * @copyright   2015 by Tobias Reich
  */
 
 header = {
@@ -67,8 +66,6 @@ header.bind = function() {
 
 header.show = function() {
 
-	clearTimeout($(window).data('timeout'))
-
 	lychee.imageview.removeClass('full')
 	header.dom().removeClass('header--hidden')
 
@@ -76,18 +73,12 @@ header.show = function() {
 
 }
 
-header.hide = function(e, delay = 500) {
+header.hide = function(e) {
 
 	if (visible.photo() && !visible.sidebar() && !visible.contextMenu() && basicModal.visible()===false) {
 
-		clearTimeout($(window).data('timeout'))
-
-		$(window).data('timeout', setTimeout(function() {
-
-			lychee.imageview.addClass('full')
-			header.dom().addClass('header--hidden')
-
-		}, delay))
+		lychee.imageview.addClass('full')
+		header.dom().addClass('header--hidden')
 
 		return true
 

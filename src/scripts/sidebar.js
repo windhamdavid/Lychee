@@ -1,6 +1,5 @@
 /**
  * @description This module takes care of the sidebar.
- * @copyright   2015 by Tobias Reich
  */
 
 sidebar = {
@@ -320,7 +319,7 @@ sidebar.createStructure.album = function(data) {
 
 sidebar.render = function(structure) {
 
-	if (structure==null || structure==='') return false
+	if (structure==null || structure==='' || structure===false) return false
 
 	let html = ''
 

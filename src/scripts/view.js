@@ -1,6 +1,5 @@
 /**
  * @description Responsible to reflect data changes to the UI.
- * @copyright   2015 by Tobias Reich
  */
 
 view = {}
@@ -309,9 +308,12 @@ view.photo = {
 		$('body').css('overflow', 'hidden')
 
 		// Fullscreen
-		$(document)
-			.bind('mouseenter', header.show)
-			.bind('mouseleave', header.hide)
+		let timeout = null
+		$(document).bind('mousemove', function() {
+			clearTimeout(timeout)
+			header.show()
+			timeout = setTimeout(header.hide, 2500)
+		})
 
 		lychee.animate(lychee.imageview, 'fadeIn')
 
@@ -328,9 +330,7 @@ view.photo = {
 		$('body').css('overflow', 'auto')
 
 		// Disable Fullscreen
-		$(document)
-			.unbind('mouseenter')
-			.unbind('mouseleave')
+		$(document).unbind('mousemove')
 
 		// Hide Photo
 		lychee.animate(lychee.imageview, 'fadeOut')
@@ -411,8 +411,8 @@ view.photo = {
 		let $nextArrow     = lychee.imageview.find('a#next')
 		let $previousArrow = lychee.imageview.find('a#previous')
 		let photoID        = photo.getID()
-		let hasNext        = album.json && album.json.content && album.json.content[photoID] && album.json.content[photoID].nextPhoto!==''
-		let hasPrevious    = album.json && album.json.content && album.json.content[photoID] && album.json.content[photoID].previousPhoto!==''
+		let hasNext        = album.json && album.json.content && album.json.content[photoID] && album.json.content[photoID].nextPhoto!=null && album.json.content[photoID].nextPhoto!==''
+		let hasPrevious    = album.json && album.json.content && album.json.content[photoID] && album.json.content[photoID].previousPhoto!=null && album.json.content[photoID].previousPhoto!==''
 
 		if (hasNext===false || lychee.viewMode===true) {
 

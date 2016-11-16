@@ -1,6 +1,5 @@
 /**
  * @description Takes care of every action a photo can handle and execute.
- * @copyright   2015 by Tobias Reich
  */
 
 photo = {
@@ -83,9 +82,11 @@ photo.preloadNext = function(photoID) {
 
 		let nextPhoto = album.json.content[photoID].nextPhoto
 		let url       = album.json.content[nextPhoto].url
+		let medium    = album.json.content[nextPhoto].medium
+		let href      = (medium!=null && medium!=='' ? medium : url)
 
 		$('head [data-prefetch]').remove()
-		$('head').append(`<link data-prefetch rel="prefetch" href="${ url }">`)
+		$('head').append(`<link data-prefetch rel="prefetch" href="${ href }">`)
 
 	}
 
